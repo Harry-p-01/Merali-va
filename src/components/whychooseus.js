@@ -1,11 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import CountUp from 'react-countup';
 
 const stats = [
-  { number: '500+', label: 'Verified Factories' },
-  { number: '50+', label: 'Products Sourced' },
-  { number: '100%', label: 'Quality Guaranteed' },
-  { number: '24/7', label: 'Client Support' },
+  { number: 500, suffix: '+', label: 'Verified Factories' },
+  { number: 50, suffix: '+', label: 'Products Sourced' },
+  { number: 100, suffix: '%', label: 'Quality Guaranteed' },
+  { number: 24, suffix: '/7', label: 'Client Support' },
 ];
 
 const reasons = [
@@ -36,7 +37,6 @@ function WhyChooseUs() {
     <section id="why" className="py-24 bg-blue-50">
       <div className="max-w-6xl mx-auto px-4">
 
-        {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ function WhyChooseUs() {
           </p>
         </motion.div>
 
-        {/* Stats */}
+        {/* Animated Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => (
             <motion.div
@@ -62,7 +62,15 @@ function WhyChooseUs() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 text-center shadow-sm"
             >
-              <p className="text-4xl font-bold text-blue-600 mb-2">{stat.number}</p>
+              <p className="text-4xl font-bold text-blue-600 mb-2">
+                <CountUp
+                  end={stat.number}
+                  duration={2}
+                  suffix={stat.suffix}
+                  enableScrollSpy
+                  scrollSpyOnce
+                />
+              </p>
               <p className="text-gray-500 font-medium">{stat.label}</p>
             </motion.div>
           ))}

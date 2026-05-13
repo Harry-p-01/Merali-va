@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -13,33 +14,47 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-lg py-2' : 'bg-white py-4'}`}>
-      <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
+    <nav style={{
+      position: 'fixed',
+      top: 0,
+      width: '100%',
+      zIndex: 50,
+      background: 'white',
+      boxShadow: scrolled ? '0 2px 20px rgba(0,0,0,0.1)' : '0 1px 3px rgba(0,0,0,0.05)',
+      padding: scrolled ? '8px 0' : '16px 0',
+      transition: 'all 0.3s ease'
+    }}>
+      <div style={{maxWidth: '1152px', margin: '0 auto', padding: '0 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
 
         <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div style={{fontSize: '22px', fontWeight: '700', color: '#1a2e4a', letterSpacing: '2px'}}>MERALI VA</div>
-          <div style={{fontSize: '9px', color: '#4a6280', letterSpacing: '2px', marginTop: '2px'}}>CONNECTING MARKETS. ELEVATING BUSINESSES</div>
+          <Link to="/" style={{textDecoration: 'none'}}>
+            <div style={{fontSize: '22px', fontWeight: '700', color: '#1a2e4a', letterSpacing: '2px'}}>MERALI VA</div>
+            <div style={{fontSize: '9px', color: '#4a6280', letterSpacing: '2px', marginTop: '2px'}}>CONNECTING MARKETS. ELEVATING BUSINESSES</div>
+          </Link>
         </motion.div>
 
-        <ul className="hidden md:flex space-x-8 list-none m-0">
-          <li><a href="#home" className="text-gray-600 hover:text-blue-600 transition font-medium">Home</a></li>
-          <li><a href="#services" className="text-gray-600 hover:text-blue-600 transition font-medium">Services</a></li>
-          <li><a href="#about" className="text-gray-600 hover:text-blue-600 transition font-medium">About</a></li>
-          <li><a href="#contact" className="text-gray-600 hover:text-blue-600 transition font-medium">Contact</a></li>
+        <ul style={{display: 'flex', gap: '32px', listStyle: 'none', margin: 0, padding: 0}}>
+          <li><Link to="/" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>Home</Link></li>
+          <li><Link to="/about" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>About</Link></li>
+          <li><Link to="/services" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>Services</Link></li>
+          <li><Link to="/contact" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>Contact</Link></li>
         </ul>
 
-        <motion.button
+        <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 shadow-md hover:shadow-lg"
         >
-          Start Sourcing
-        </motion.button>
+          <Link to="/contact" style={{textDecoration: 'none'}}>
+            <button style={{background: '#2563eb', color: 'white', padding: '10px 24px', borderRadius: '24px', fontWeight: '600', border: 'none', cursor: 'pointer'}}>
+              Start Sourcing
+            </button>
+          </Link>
+        </motion.div>
 
       </div>
     </nav>
