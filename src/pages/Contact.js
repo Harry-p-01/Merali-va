@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
+    from_name: '',
+    from_email: '',
     subject: '',
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,10 +20,21 @@ function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError('');
+
+    try {
+      await emailjs.send(
+        'service_577j2bj',
+        'template_5psqabh',
+        formData,
+        '8gu1lPmtDFnDwVGni'
+      );
       setSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      setError('Something went wrong. Please try again or email us directly at info@merali-va.com');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -69,7 +82,6 @@ function Contact() {
           >
             <h2 style={{fontSize: '28px', fontWeight: '700', color: '#1e293b', marginBottom: '32px'}}>Contact Information</h2>
 
-            {/* Location */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
               <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📍</div>
               <div>
@@ -78,7 +90,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Email */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
               <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>✉️</div>
               <div>
@@ -87,7 +98,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Phone */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '48px', alignItems: 'flex-start'}}>
               <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📞</div>
               <div>
@@ -96,7 +106,6 @@ function Contact() {
               </div>
             </div>
 
-            {/* Social Media */}
             <div>
               <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '16px', fontSize: '18px'}}>Follow Us</p>
               <div style={{display: 'flex', gap: '12px'}}>
@@ -124,13 +133,20 @@ function Contact() {
             ) : (
               <div style={{background: '#f8fafc', borderRadius: '16px', padding: '40px'}}>
                 <h3 style={{fontSize: '24px', fontWeight: '700', color: '#1e293b', marginBottom: '32px'}}>Send Us a Message</h3>
+
+                {error && (
+                  <div style={{background: '#fee2e2', color: '#dc2626', padding: '12px 16px', borderRadius: '8px', marginBottom: '20px', fontSize: '14px'}}>
+                    {error}
+                  </div>
+                )}
+
                 <div style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
                   <div>
                     <label style={{display: 'block', fontWeight: '600', color: '#374151', marginBottom: '8px'}}>Full Name</label>
                     <input
                       type="text"
-                      name="name"
-                      value={formData.name}
+                      name="from_name"
+                      value={formData.from_name}
                       onChange={handleChange}
                       placeholder="John Doe"
                       required
@@ -141,8 +157,8 @@ function Contact() {
                     <label style={{display: 'block', fontWeight: '600', color: '#374151', marginBottom: '8px'}}>Email Address</label>
                     <input
                       type="email"
-                      name="email"
-                      value={formData.email}
+                      name="from_email"
+                      value={formData.from_email}
                       onChange={handleChange}
                       placeholder="john@example.com"
                       required
@@ -176,9 +192,9 @@ function Contact() {
                   <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    style={{background: '#2563eb', color: 'white', padding: '14px 32px', borderRadius: '32px', fontSize: '16px', fontWeight: '600', border: 'none', cursor: 'pointer', marginTop: '8px'}}
+                    style={{background: loading ? '#93c5fd' : '#2563eb', color: 'white', padding: '14px 32px', borderRadius: '32px', fontSize: '16px', fontWeight: '600', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', marginTop: '8px', transition: 'all 0.3s ease'}}
                   >
-                    {loading ? 'Sending...' : 'Send Message'}
+                    {loading ? 'Sending...' : 'Send Message ✉️'}
                   </button>
                 </div>
               </div>

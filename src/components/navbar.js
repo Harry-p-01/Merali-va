@@ -42,6 +42,7 @@ function Navbar() {
           <li><Link to="/about" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>About</Link></li>
           <li><Link to="/services" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>Services</Link></li>
           <li><Link to="/contact" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>Contact</Link></li>
+          <li><Link to="/gallery" style={{color: '#4b5563', textDecoration: 'none', fontWeight: '500'}}>Gallery</Link></li>
         </ul>
 
         <motion.div

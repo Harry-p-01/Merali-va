@@ -9,6 +9,7 @@ import HowItWorks from './components/howitworks';
 import About from './pages/About';
 import ServicesPage from './pages/Services';
 import Contact from './pages/Contact';
+import Gallery from './pages/Gallery';
 
 function HomePage() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/gallery" element={<Gallery />} />
       </Routes>
       <Footer />
     </Router>

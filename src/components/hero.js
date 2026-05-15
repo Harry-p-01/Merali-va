@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 function Hero() {
   return (
@@ -41,12 +42,16 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex space-x-4"
           >
-            <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition font-semibold shadow-lg">
-              Start Sourcing
-            </button>
-            <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition font-semibold">
-              Our Services
-            </button>
+            <Link to="/contact" style={{textDecoration: 'none'}}>
+              <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition font-semibold shadow-lg">
+                Start Sourcing
+              </button>
+            </Link>
+            <Link to="/services" style={{textDecoration: 'none'}}>
+              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition font-semibold">
+                Our Services
+              </button>
+            </Link>
           </motion.div>
         </div>
 

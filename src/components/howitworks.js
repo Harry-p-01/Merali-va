@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const steps = [
   {
@@ -88,9 +89,11 @@ function HowItWorks() {
           className="text-center mt-16"
         >
           <p className="text-gray-500 text-lg mb-6">Ready to start your sourcing journey?</p>
-          <button className="bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 transition font-semibold shadow-lg text-lg">
-            Get Started Today
-          </button>
+          <Link to="/contact" style={{textDecoration: 'none'}}>
+            <button className="bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 transition font-semibold shadow-lg text-lg">
+              Get Started Today
+            </button>
+          </Link>
         </motion.div>
 
       </div>
