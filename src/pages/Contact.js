@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
+import { FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -21,7 +22,6 @@ function Contact() {
     e.preventDefault();
     setLoading(true);
     setError('');
-
     try {
       await emailjs.send(
         'service_577j2bj',
@@ -36,6 +36,27 @@ function Contact() {
       setLoading(false);
     }
   };
+
+  const socialLinks = [
+    {
+      icon: <FaFacebookF size={20} />,
+      href: 'https://www.facebook.com/profile.php?id=61576947726557',
+      bg: '#1877f2',
+      label: 'Facebook'
+    },
+    {
+      icon: <FaInstagram size={20} />,
+      href: 'https://www.instagram.com/merali.va?igsh=MXZsNG92M2VmdnBnag==',
+      bg: '#e1306c',
+      label: 'Instagram'
+    },
+    {
+      icon: <FaWhatsapp size={20} />,
+      href: 'https://api.whatsapp.com/send?phone=254714411890&text=Hello%2C%20I%20saw%20your%20VA%20services%20website%20and%20I%27m%20interested.%20Could%20you%20please%20share%20your%20service%20packages%20and%20pricing%3F',
+      bg: '#25d366',
+      label: 'WhatsApp'
+    },
+  ];
 
   return (
     <div style={{paddingTop: '80px'}}>
@@ -82,6 +103,7 @@ function Contact() {
           >
             <h2 style={{fontSize: '28px', fontWeight: '700', color: '#1e293b', marginBottom: '32px'}}>Contact Information</h2>
 
+            {/* Location */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
               <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📍</div>
               <div>
@@ -90,6 +112,7 @@ function Contact() {
               </div>
             </div>
 
+            {/* Email */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
               <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>✉️</div>
               <div>
@@ -98,7 +121,8 @@ function Contact() {
               </div>
             </div>
 
-            <div style={{display: 'flex', gap: '16px', marginBottom: '48px', alignItems: 'flex-start'}}>
+            {/* Phone */}
+            <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
               <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📞</div>
               <div>
                 <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '4px'}}>Call Us</p>
@@ -106,14 +130,6 @@ function Contact() {
               </div>
             </div>
 
-            <div>
-              <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '16px', fontSize: '18px'}}>Follow Us</p>
-              <div style={{display: 'flex', gap: '12px'}}>
-                <a href="https://www.facebook.com/profile.php?id=61576947726557" target="_blank" rel="noreferrer" style={{width: '48px', height: '48px', background: '#2563eb', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', textDecoration: 'none', fontSize: '16px'}}>f</a>
-                <a href="https://www.instagram.com/merali.va?igsh=MXZsNG92M2VmdnBnag==" target="_blank" rel="noreferrer" style={{width: '48px', height: '48px', background: '#db2777', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', textDecoration: 'none', fontSize: '14px'}}>in</a>
-                <a href="https://api.whatsapp.com/send?phone=254714411890&text=Hello%2C%20I%20saw%20your%20VA%20services%20website%20and%20I%27m%20interested.%20Could%20you%20please%20share%20your%20service%20packages%20and%20pricing%3F" target="_blank" rel="noreferrer" style={{width: '48px', height: '48px', background: '#16a34a', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', textDecoration: 'none', fontSize: '14px'}}>wa</a>
-              </div>
-            </div>
           </motion.div>
 
           {/* Right - Form */}
@@ -197,6 +213,36 @@ function Contact() {
                     {loading ? 'Sending...' : 'Send Message ✉️'}
                   </button>
                 </div>
+
+                {/* Follow Us — below form */}
+                <div style={{marginTop: '40px', paddingTop: '32px', borderTop: '1px solid #e2e8f0'}}>
+                  <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '16px', fontSize: '18px'}}>Follow Us</p>
+                  <div style={{display: 'flex', gap: '12px'}}>
+                    {socialLinks.map((social) => (
+                      <a
+                        key={social.label}
+                        href={social.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        style={{
+                          width: '48px',
+                          height: '48px',
+                          background: social.bg,
+                          borderRadius: '50%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: 'white',
+                          textDecoration: 'none',
+                          transition: 'transform 0.2s ease',
+                        }}
+                      >
+                        {social.icon}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
               </div>
             )}
           </motion.div>

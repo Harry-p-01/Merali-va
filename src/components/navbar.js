@@ -22,8 +22,8 @@ function Navbar() {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Contact', path: '/Contact' },
+    { name: 'Gallery', path: '/Gallery' },
   ];
 
   return (
