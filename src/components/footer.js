@@ -5,7 +5,7 @@ const socialLinks = [
   {
     icon: <FaFacebookF size={18} />,
     href: 'https://www.facebook.com/profile.php?id=61576947726557',
-    bg: '#1877f2',
+    bg: '#1877f2', // KEPT original Facebook blue
     label: 'Facebook'
   },
   {
@@ -24,7 +24,7 @@ const socialLinks = [
 
 function Footer() {
   return (
-    <footer style={{background: '#0f172a', color: 'white', padding: '64px 0 0'}}>
+    <footer style={{background: '#4b797b', color: 'white', padding: '64px 0 0'}}>  {/* Changed from #0f172a to #4b797b */}
       <div style={{maxWidth: '1152px', margin: '0 auto', padding: '0 24px'}}>
 
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', gap: '48px', paddingBottom: '48px'}}>
@@ -32,8 +32,8 @@ function Footer() {
           {/* Left - Brand */}
           <div style={{maxWidth: '300px'}}>
             <div style={{fontSize: '22px', fontWeight: '700', letterSpacing: '2px', color: 'white', marginBottom: '4px'}}>MERALI VA</div>
-            <div style={{fontSize: '9px', color: '#64748b', letterSpacing: '2px', marginBottom: '16px'}}>CONNECTING MARKETS. ELEVATING BUSINESSES</div>
-            <p style={{color: '#94a3b8', fontSize: '14px', lineHeight: '1.8', marginBottom: '24px'}}>
+            <div style={{fontSize: '9px', color: '#d1e8e8', letterSpacing: '2px', marginBottom: '16px'}}>CONNECTING MARKETS. ELEVATING BUSINESSES</div>
+            <p style={{color: '#f0f7f7', fontSize: '14px', lineHeight: '1.8', marginBottom: '24px'}}>
               Your dedicated partner bridging the manufacturing powerhouses of Vietnam and China with the growing markets of Kenya and East Africa.
             </p>
             {/* Social Icons */}
@@ -74,7 +74,7 @@ function Footer() {
                 { name: 'Contact', path: '/contact' },
                 { name: 'Gallery', path: '/gallery' },
               ].map(link => (
-                <a key={link.name} href={link.path} style={{color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s'}}>
+                <a key={link.name} href={link.path} style={{color: '#f0f7f7', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s'}}>
                   {link.name}
                 </a>
               ))}
@@ -87,17 +87,17 @@ function Footer() {
             <div style={{display: 'flex', flexDirection: 'column', gap: '16px'}}>
               <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
                 <span style={{fontSize: '18px'}}>📍</span>
-                <p style={{color: '#94a3b8', fontSize: '14px', lineHeight: '1.6'}}>Nairobi, Kenya<br/>East Africa & Southeast Asia</p>
+                <p style={{color: '#f0f7f7', fontSize: '14px', lineHeight: '1.6'}}>Nairobi, Kenya<br/>East Africa & Southeast Asia</p>
               </div>
               <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
                 <span style={{fontSize: '18px'}}>✉️</span>
-                <a href="mailto:info@merali-va.com" style={{color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s'}}>
+                <a href="mailto:info@merali-va.com" style={{color: '#f0f7f7', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s'}}>
                   info@merali-va.com
                 </a>
               </div>
               <div style={{display: 'flex', alignItems: 'center', gap: '12px'}}>
                 <span style={{fontSize: '18px'}}>📞</span>
-                <a href="tel:+84813618795" style={{color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s'}}>
+                <a href="tel:+84813618795" style={{color: '#f0f7f7', textDecoration: 'none', fontSize: '14px', transition: 'color 0.2s'}}>
                   +84 813 618 795
                 </a>
               </div>
@@ -107,11 +107,11 @@ function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div style={{borderTop: '1px solid #1e293b', padding: '24px 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px'}}>
-          <p style={{color: '#475569', fontSize: '13px'}}>
+        <div style={{borderTop: '1px solid #3d6b6d', padding: '24px 0', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px'}}>
+          <p style={{color: '#e0efef', fontSize: '13px'}}>
             © {new Date().getFullYear()} Merali VA. All rights reserved.
           </p>
-          <p style={{color: '#475569', fontSize: '13px'}}>
+          <p style={{color: '#e0efef', fontSize: '13px'}}>
             Connecting Vietnam & China to Kenya & East Africa 🌍
           </p>
         </div>

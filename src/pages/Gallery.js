@@ -12,16 +12,16 @@ import img8 from '../assets/8.jpeg';
 
 const images = [
   { id: 1, src: img1, title: 'Factory Visit', category: 'Sourcing' },
-  { id: 2, src: img2, title: 'Product Inspection', category: 'Quality' },
-  { id: 3, src: img3, title: 'Logistics Operations', category: 'Logistics' },
-  { id: 4, src: img4, title: 'Client Meeting', category: 'Clients' },
+  { id: 2, src: img2, title: 'Product Inspection', category: 'Factory Verification' },
+  { id: 3, src: img3, title: 'Logistics Operations', category: 'Trade Expo' },
+  { id: 4, src: img4, title: 'Client Meeting', category: 'Trade Expo' },
   { id: 5, src: img5, title: 'Manufacturing Floor', category: 'Sourcing' },
-  { id: 6, src: img6, title: 'Shipment Ready', category: 'Logistics' },
-  { id: 7, src: img7, title: 'Quality Check', category: 'Quality' },
-  { id: 8, src: img8, title: 'Team at Work', category: 'Clients' },
+  { id: 6, src: img6, title: 'Shipment Ready', category: 'Trade Expo' },
+  { id: 7, src: img7, title: 'Quality Check', category: 'Factory Verification' },
+  { id: 8, src: img8, title: 'Team at Work', category: 'Trade Expo' },
 ];
 
-const categories = ['All', 'Sourcing', 'Quality', 'Logistics', 'Clients'];
+const categories = ['All', 'Sourcing', 'Factory Verification', 'Trade Expo'];
 
 function Gallery() {
   const [selected, setSelected] = useState('All');
@@ -33,12 +33,12 @@ function Gallery() {
     <div style={{paddingTop: '80px'}}>
 
       {/* Hero */}
-      <section style={{background: 'linear-gradient(135deg, #eff6ff 0%, #ffffff 100%)', padding: '80px 16px', textAlign: 'center'}}>
+      <section style={{background: 'linear-gradient(135deg, #f0faea 0%, #ffffff 100%)', padding: '80px 16px', textAlign: 'center'}}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          style={{color: '#2563eb', fontWeight: '600', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '16px'}}
+          style={{color: '#4b797b', fontWeight: '600', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '16px'}}
         >
           Our Work
         </motion.p>
@@ -48,7 +48,7 @@ function Gallery() {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{fontSize: '48px', fontWeight: '700', color: '#1e293b', marginBottom: '24px', lineHeight: '1.2'}}
         >
-          Proof of Our <span style={{color: '#2563eb'}}>Excellence</span>
+          Proof of Our <span style={{color: '#4b797b'}}>Excellence</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -71,7 +71,7 @@ function Gallery() {
                 padding: '10px 24px',
                 borderRadius: '24px',
                 border: selected === cat ? 'none' : '1px solid #e2e8f0',
-                background: selected === cat ? '#2563eb' : 'white',
+                background: selected === cat ? '#4b797b' : 'white',
                 color: selected === cat ? 'white' : '#64748b',
                 fontWeight: '600',
                 cursor: 'pointer',
@@ -106,7 +106,7 @@ function Gallery() {
               />
               <div style={{padding: '16px', background: 'white'}}>
                 <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '4px'}}>{image.title}</p>
-                <span style={{fontSize: '12px', background: '#eff6ff', color: '#2563eb', padding: '4px 10px', borderRadius: '12px', fontWeight: '600'}}>{image.category}</span>
+                <span style={{fontSize: '12px', background: '#f0faea', color: '#4b797b', padding: '4px 10px', borderRadius: '12px', fontWeight: '600'}}>{image.category}</span>
               </div>
             </motion.div>
           ))}
@@ -138,7 +138,7 @@ function Gallery() {
               <div style={{padding: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
                 <div>
                   <p style={{fontWeight: '700', color: '#1e293b', fontSize: '18px', marginBottom: '4px'}}>{lightbox.title}</p>
-                  <span style={{fontSize: '12px', background: '#eff6ff', color: '#2563eb', padding: '4px 10px', borderRadius: '12px', fontWeight: '600'}}>{lightbox.category}</span>
+                  <span style={{fontSize: '12px', background: '#f0faea', color: '#4b797b', padding: '4px 10px', borderRadius: '12px', fontWeight: '600'}}>{lightbox.category}</span>
                 </div>
                 <button
                   onClick={() => setLightbox(null)}

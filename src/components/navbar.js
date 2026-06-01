@@ -38,10 +38,15 @@ function Navbar() {
     }}>
       <div style={{maxWidth: '1152px', margin: '0 auto', padding: '12px 24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
 
-        {/* Logo */}
+        {/* Logo - UPDATED: MERALI black, VA teal, tagline teal */}
         <Link to="/" style={{textDecoration: 'none', flexShrink: 0}}>
-          <div style={{fontSize: '18px', fontWeight: '700', color: '#1a2e4a', letterSpacing: '2px', whiteSpace: 'nowrap'}}>MERALI VA</div>
-          <div style={{fontSize: '7px', color: '#4a6280', letterSpacing: '1.5px', marginTop: '1px', whiteSpace: 'nowrap'}}>CONNECTING MARKETS. ELEVATING BUSINESSES</div>
+          <div style={{fontSize: '18px', fontWeight: '700', letterSpacing: '2px', whiteSpace: 'nowrap'}}>
+            <span style={{color: '#1a2e4a'}}>MERALI </span>
+            <span style={{color: '#4b797b'}}>VA</span>
+          </div>
+          <div style={{fontSize: '7px', color: '#4b797b', letterSpacing: '1.5px', marginTop: '1px', whiteSpace: 'nowrap'}}>
+            CONNECTING MARKETS. ELEVATING BUSINESSES
+          </div>
         </Link>
 
         {/* Desktop Nav Links — only on desktop */}
@@ -60,7 +65,7 @@ function Navbar() {
         {/* Desktop CTA — only on desktop */}
         {!isMobile && (
           <Link to="/contact" style={{textDecoration: 'none'}}>
-            <button style={{background: '#2563eb', color: 'white', padding: '10px 24px', borderRadius: '24px', fontWeight: '600', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap'}}>
+            <button style={{background: '#4b797b', color: 'white', padding: '10px 24px', borderRadius: '24px', fontWeight: '600', border: 'none', cursor: 'pointer', whiteSpace: 'nowrap'}}>
               Start Sourcing
             </button>
           </Link>
@@ -72,9 +77,9 @@ function Navbar() {
             onClick={() => setMenuOpen(!menuOpen)}
             style={{background: 'none', border: 'none', cursor: 'pointer', padding: '4px', display: 'flex', flexDirection: 'column', gap: '5px'}}
           >
-            <span style={{display: 'block', width: '24px', height: '2px', background: menuOpen ? '#2563eb' : '#1a2e4a', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'}}></span>
-            <span style={{display: 'block', width: '24px', height: '2px', background: menuOpen ? '#2563eb' : '#1a2e4a', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1}}></span>
-            <span style={{display: 'block', width: '24px', height: '2px', background: menuOpen ? '#2563eb' : '#1a2e4a', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'}}></span>
+            <span style={{display: 'block', width: '24px', height: '2px', background: menuOpen ? '#4b797b' : '#1a2e4a', transition: 'all 0.3s', transform: menuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none'}}></span>
+            <span style={{display: 'block', width: '24px', height: '2px', background: menuOpen ? '#4b797b' : '#1a2e4a', transition: 'all 0.3s', opacity: menuOpen ? 0 : 1}}></span>
+            <span style={{display: 'block', width: '24px', height: '2px', background: menuOpen ? '#4b797b' : '#1a2e4a', transition: 'all 0.3s', transform: menuOpen ? 'rotate(-45deg) translate(5px, -5px)' : 'none'}}></span>
           </button>
         )}
 
@@ -101,7 +106,7 @@ function Navbar() {
                 </Link>
               ))}
               <Link to="/contact" onClick={() => setMenuOpen(false)} style={{textDecoration: 'none', marginTop: '8px'}}>
-                <button style={{background: '#2563eb', color: 'white', padding: '12px 24px', borderRadius: '24px', fontWeight: '600', border: 'none', cursor: 'pointer', width: '100%', fontSize: '16px'}}>
+                <button style={{background: '#4b797b', color: 'white', padding: '12px 24px', borderRadius: '24px', fontWeight: '600', border: 'none', cursor: 'pointer', width: '100%', fontSize: '16px'}}>
                   Start Sourcing
                 </button>
               </Link>

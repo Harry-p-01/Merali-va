@@ -40,15 +40,15 @@ button:hover {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #2563eb;
+  background: #4b797b;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1d4ed8;
+  background: #4b797b;
 }
 
 ::selection {
-  background: #2563eb;
+  background: #4b797b;
   color: white;
 }

@@ -30,6 +30,9 @@ const steps = [
 ];
 
 function HowItWorks() {
+  const primaryColor = '#4b797b';
+  const lightColor = '#e0efef';
+
   return (
     <section id="how" className="py-24 bg-white">
       <div className="max-w-6xl mx-auto px-4">
@@ -42,11 +45,13 @@ function HowItWorks() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-blue-600 font-semibold tracking-widest uppercase mb-3">The Process</p>
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">How It Works</h2>
-          <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            From your first inquiry to delivery at your doorstep — here is how we make it happen.
+          <p className="font-semibold tracking-widest uppercase mb-3" style={{ color: primaryColor }}>
+            The Process
           </p>
+          <h2 className="text-4xl font-bold text-gray-800 mb-4">How It Works</h2>
+          {/* <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+            From your first inquiry to delivery at your doorstep — here is how we make it happen.
+          </p> */}
         </motion.div>
 
         {/* Steps */}
@@ -62,15 +67,15 @@ function HowItWorks() {
             >
               {/* Connector Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 bg-blue-100 z-0"></div>
+                <div className="hidden lg:block absolute top-10 left-1/2 w-full h-0.5 z-0" style={{ backgroundColor: lightColor }}></div>
               )}
 
-              {/* Step Number */}
-              <div className="relative z-10 inline-flex items-center justify-center w-20 h-20 bg-blue-600 text-white rounded-full text-2xl mb-6 shadow-lg">
+              {/* Step Circle */}
+              <div className="relative z-10 inline-flex items-center justify-center w-20 h-20 rounded-full text-white mb-6 shadow-lg" style={{ backgroundColor: primaryColor }}>
                 {step.icon}
               </div>
 
-              <div className="text-blue-200 font-bold text-5xl absolute top-0 left-4 z-0 select-none">
+              <div className="font-bold text-5xl absolute top-0 left-4 z-0 select-none" style={{ color: lightColor }}>
                 {step.number}
               </div>
 
@@ -89,8 +94,13 @@ function HowItWorks() {
           className="text-center mt-16"
         >
           <p className="text-gray-500 text-lg mb-6">Ready to start your sourcing journey?</p>
-          <Link to="/contact" style={{textDecoration: 'none'}}>
-            <button className="bg-blue-600 text-white px-10 py-4 rounded-full hover:bg-blue-700 transition font-semibold shadow-lg text-lg">
+          <Link to="/contact" style={{ textDecoration: 'none' }}>
+            <button
+              className="text-white px-10 py-4 rounded-full transition font-semibold shadow-lg text-lg"
+              style={{ backgroundColor: primaryColor }}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#3a6062'} // slightly darker on hover
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = primaryColor}
+            >
               Get Started Today
             </button>
           </Link>

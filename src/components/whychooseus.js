@@ -33,8 +33,10 @@ const reasons = [
 ];
 
 function WhyChooseUs() {
+  const primaryColor = '#4b797b';
+
   return (
-    <section id="why" className="py-24 bg-blue-50">
+    <section id="why" className="py-24" style={{ backgroundColor: 'rgba(75, 121, 123, 0.3)' }}>
       <div className="max-w-6xl mx-auto px-4">
 
         <motion.div
@@ -44,7 +46,9 @@ function WhyChooseUs() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <p className="text-blue-600 font-semibold tracking-widest uppercase mb-3">Why Merali VA</p>
+          <p className="font-semibold tracking-widest uppercase mb-3" style={{ color: primaryColor }}>
+            Why Merali VA
+          </p>
           <h2 className="text-4xl font-bold text-gray-800 mb-4">The Merali VA Advantage</h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
             We are not just a sourcing agent. We are an extension of your team.
@@ -62,7 +66,7 @@ function WhyChooseUs() {
               viewport={{ once: true }}
               className="bg-white rounded-2xl p-6 text-center shadow-sm"
             >
-              <p className="text-4xl font-bold text-blue-600 mb-2">
+              <p className="text-4xl font-bold mb-2" style={{ color: primaryColor }}>
                 <CountUp
                   end={stat.number}
                   duration={2}

@@ -3,8 +3,11 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 function Hero() {
+  const primaryColor = '#4b797b';
+  const lightBgColor = '#e0efef'; // light version of #4b797b for backgrounds
+
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-blue-50 to-white flex items-center pt-20">
+    <section id="home" className="min-h-screen bg-gradient-to-br from-[#e0efef] to-white flex items-center pt-20">
       <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
 
         {/* Left Side - Text */}
@@ -13,7 +16,8 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-blue-600 font-semibold text-lg mb-4 tracking-widest uppercase"
+            className="font-semibold text-lg mb-4 tracking-widest uppercase"
+            style={{ color: primaryColor }}
           >
             Vietnam & China → Kenya & East Africa
           </motion.p>
@@ -24,7 +28,7 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-5xl font-bold text-gray-800 leading-tight mb-6"
           >
-            Your Gateway to <span className="text-blue-600">Asian Manufacturing</span>
+            Your Gateway to <span style={{ color: primaryColor }}>Asian Manufacturing</span>
           </motion.h1>
 
           <motion.p
@@ -33,7 +37,7 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-gray-500 text-lg mb-8"
           >
-            We bridge the gap between the industrial powerhouses of Vietnam and China and the growing markets of Kenya and East Africa. Premium sourcing, quality assurance, and seamless logistics — all under one roof.
+            We bridge the gap between the industrial powerhouses of Vietnam and China and the growing markets of Kenya and East Africa. Premium sourcing, quality assurance, and seamless logistics, all under one roof.
           </motion.p>
 
           <motion.div
@@ -42,13 +46,19 @@ function Hero() {
             transition={{ duration: 0.6, delay: 0.6 }}
             className="flex space-x-4"
           >
-            <Link to="/contact" style={{textDecoration: 'none'}}>
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition font-semibold shadow-lg">
+            <Link to="/contact" style={{ textDecoration: 'none' }}>
+              <button
+                className="text-white px-8 py-3 rounded-full hover:opacity-90 transition font-semibold shadow-lg"
+                style={{ backgroundColor: primaryColor }}
+              >
                 Start Sourcing
               </button>
             </Link>
-            <Link to="/services" style={{textDecoration: 'none'}}>
-              <button className="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-full hover:bg-blue-50 transition font-semibold">
+            <Link to="/services" style={{ textDecoration: 'none' }}>
+              <button
+                className="px-8 py-3 rounded-full hover:bg-opacity-10 transition font-semibold"
+                style={{ border: `2px solid ${primaryColor}`, color: primaryColor }}
+              >
                 Our Services
               </button>
             </Link>
@@ -69,28 +79,28 @@ function Hero() {
               <div className="w-3 h-3 bg-green-400 rounded-full"></div>
             </div>
             <div className="space-y-4">
-              <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
+              <div className="flex items-center space-x-3 p-3 rounded-lg" style={{ backgroundColor: lightBgColor }}>
                 <span className="text-2xl">🏭</span>
                 <div>
                   <p className="font-semibold text-gray-800 text-sm">Verified Factories</p>
                   <p className="text-gray-500 text-xs">Vietnam & China</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
+              <div className="flex items-center space-x-3 p-3 rounded-lg" style={{ backgroundColor: lightBgColor }}>
                 <span className="text-2xl">✅</span>
                 <div>
                   <p className="font-semibold text-gray-800 text-sm">Quality Assurance</p>
                   <p className="text-gray-500 text-xs">Pre-shipment inspections</p>
                 </div>
               </div>
-              <div className="flex items-center space-x-3 p-3 bg-blue-50 rounded-lg">
+              <div className="flex items-center space-x-3 p-3 rounded-lg" style={{ backgroundColor: lightBgColor }}>
                 <span className="text-2xl">🚢</span>
                 <div>
                   <p className="font-semibold text-gray-800 text-sm">Logistics & Compliance</p>
                   <p className="text-gray-500 text-xs">Nairobi & Mombasa delivery</p>
                 </div>
               </div>
-              <div className="h-10 bg-blue-600 rounded-lg flex items-center justify-center mt-2">
+              <div className="h-10 rounded-lg flex items-center justify-center mt-2" style={{ backgroundColor: primaryColor }}>
                 <p className="text-white font-semibold text-sm">🌍 Asia to Africa, Seamlessly</p>
               </div>
             </div>

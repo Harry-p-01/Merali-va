@@ -62,12 +62,12 @@ function Contact() {
     <div style={{paddingTop: '80px'}}>
 
       {/* Hero */}
-      <section style={{background: 'linear-gradient(135deg, #eff6ff 0%, #ffffff 100%)', padding: '80px 16px', textAlign: 'center'}}>
+      <section style={{background: 'linear-gradient(135deg, #f0faea 0%, #ffffff 100%)', padding: '80px 16px', textAlign: 'center'}}>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          style={{color: '#2563eb', fontWeight: '600', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '16px'}}
+          style={{color: '#4b797b', fontWeight: '600', letterSpacing: '3px', textTransform: 'uppercase', marginBottom: '16px'}}
         >
           Get In Touch
         </motion.p>
@@ -77,7 +77,7 @@ function Contact() {
           transition={{ duration: 0.6, delay: 0.2 }}
           style={{fontSize: '48px', fontWeight: '700', color: '#1e293b', marginBottom: '24px', lineHeight: '1.2'}}
         >
-          Let's Start Your <span style={{color: '#2563eb'}}>Sourcing Journey</span>
+          Let's Start Your <span style={{color: '#4b797b'}}>Sourcing Journey</span>
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,7 @@ function Contact() {
 
             {/* Location */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
-              <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📍</div>
+              <div style={{width: '48px', height: '48px', background: '#f0faea', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📍</div>
               <div>
                 <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '4px'}}>Our Location</p>
                 <p style={{color: '#64748b', lineHeight: '1.6'}}>Nairobi, Kenya<br/>Operating across East Africa & Southeast Asia</p>
@@ -114,19 +114,19 @@ function Contact() {
 
             {/* Email */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
-              <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>✉️</div>
+              <div style={{width: '48px', height: '48px', background: '#f0faea', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>✉️</div>
               <div>
                 <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '4px'}}>Email Us</p>
-                <a href="mailto:info@merali-va.com" style={{color: '#2563eb', textDecoration: 'none', fontSize: '16px'}}>info@merali-va.com</a>
+                <a href="mailto:info@merali-va.com" style={{color: '#4b797b', textDecoration: 'none', fontSize: '16px'}}>info@merali-va.com</a>
               </div>
             </div>
 
             {/* Phone */}
             <div style={{display: 'flex', gap: '16px', marginBottom: '32px', alignItems: 'flex-start'}}>
-              <div style={{width: '48px', height: '48px', background: '#eff6ff', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📞</div>
+              <div style={{width: '48px', height: '48px', background: '#f0faea', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '22px', flexShrink: 0}}>📞</div>
               <div>
                 <p style={{fontWeight: '700', color: '#1e293b', marginBottom: '4px'}}>Call Us</p>
-                <a href="tel:+84813618795" style={{color: '#2563eb', textDecoration: 'none', fontSize: '16px'}}>+84 813 618 795</a>
+                <a href="tel:+84813618795" style={{color: '#4b797b', textDecoration: 'none', fontSize: '16px'}}>+84 813 618 795</a>
               </div>
             </div>
 
@@ -141,7 +141,7 @@ function Contact() {
             style={{flex: '2', minWidth: '300px'}}
           >
             {submitted ? (
-              <div style={{textAlign: 'center', padding: '80px 32px', background: '#eff6ff', borderRadius: '16px'}}>
+              <div style={{textAlign: 'center', padding: '80px 32px', background: '#f0faea', borderRadius: '16px'}}>
                 <div style={{fontSize: '64px', marginBottom: '16px'}}>🎉</div>
                 <h3 style={{fontSize: '28px', fontWeight: '700', color: '#1e293b', marginBottom: '12px'}}>Message Sent!</h3>
                 <p style={{color: '#64748b', fontSize: '16px'}}>Thank you for reaching out. We will get back to you within 24 hours.</p>
@@ -208,7 +208,7 @@ function Contact() {
                   <button
                     onClick={handleSubmit}
                     disabled={loading}
-                    style={{background: loading ? '#93c5fd' : '#2563eb', color: 'white', padding: '14px 32px', borderRadius: '32px', fontSize: '16px', fontWeight: '600', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', marginTop: '8px', transition: 'all 0.3s ease'}}
+                    style={{background: loading ? '#93c5fd' : '#4b797b', color: 'white', padding: '14px 32px', borderRadius: '32px', fontSize: '16px', fontWeight: '600', border: 'none', cursor: loading ? 'not-allowed' : 'pointer', marginTop: '8px', transition: 'all 0.3s ease'}}
                   >
                     {loading ? 'Sending...' : 'Send Message ✉️'}
                   </button>
