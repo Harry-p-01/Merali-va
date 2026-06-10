@@ -20,12 +20,12 @@ const services = [
   {
     icon: '📊',
     title: 'Sales Representation',
-    description: 'For Asian manufacturers lookinf forward to invest in East Africa, we offer market entry services, Market intelligence, lead generation and localized sales strategies.',
+    description: 'For Asian manufacturers looking forward to invest in East Africa, we offer market entry services, Market intelligence, lead generation and localized sales strategies.',
   },
   {
     icon: '👥',
     title: 'Talent Sourcing',
-    description: 'We identify and recruit top-tier talent across the trade corridor e.g regional sales managers, technical consultants and administrative professionals.',
+    description: 'We specialize in Talent Sourcing & Lead generation in the trade industry and across other proffesional sectors.',
   },
   {
     icon: '✉️',

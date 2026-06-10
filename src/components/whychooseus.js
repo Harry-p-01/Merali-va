@@ -51,7 +51,7 @@ function WhyChooseUs() {
           </p>
           <h2 className="text-4xl font-bold text-gray-800 mb-4">The Merali VA Advantage</h2>
           <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-            We are not just a sourcing agent. We are an extension of your team.
+            We are not just a sourcing agent. We are your dedicated ground partner!
           </p>
         </motion.div>
 

@@ -55,7 +55,7 @@ const services = [
   {
     icon: '👥',
     title: 'Talent Sourcing',
-    description: 'We identify and recruit top-tier talent across the trade corridor — regional sales managers, technical consultants and administrative professionals.',
+    description: 'We identify and recruit top-tier talent across the trade corridor; regional sales managers, technical consultants and administrative professionals.',
     details: [
       'Regional sales managers',
       'Technical consultants',
